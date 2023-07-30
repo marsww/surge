@@ -1,0 +1,11 @@
+#!name=IPTV-Mobile
+#!desc=修改返回的路由ip为自己家里的ip
+
+[General]
+force-http-engine-hosts = %APPEND% bjiptv.gq
+
+[MITM]
+hostname = %INSERT% bjiptv.gq
+
+[Script]
+Beijing-IPTV-ip-replace = type=http-response,requires-body=1,pattern=^https:\/\/bjiptv\.gq\/IPTV-Mobile\.m3u,debug=1,script-path=https://github.com/marsww/surge/raw/main/scripts/Beijing-IPTV-ip-replace.js
